@@ -1,9 +1,16 @@
 import mysql.connector as msc
 from app.log_handler import get_logger
 
+class SqlSuperHandler:
 
 
-class System_Sql_Data_Base_Handler():
+    def manual_entry(self, entry_command):
+        """manually enter a SQL command"""
+        self.myc.execute(entry_command)
+
+class System_Sql_Data_Base_Handler(SqlSuperHandler):
+
+
     def __init__(self):
         self.logger = get_logger()
         self.db = self.connect_to_db()
@@ -40,8 +47,7 @@ class System_Sql_Data_Base_Handler():
         self.myc.execute("DROP DATABASE {0}".format(name))
 
 
-
-class MySqlDataBase:
+class MySqlDataBase(SqlSuperHandler):
 
     def __init__(self, name):
         self.logger = get_logger()
@@ -79,9 +85,6 @@ class MySqlDataBase:
         self.myc.execute("SHOW TABLES ")
         print(*self.myc)
 
-
     def show_table(self,name):
         self.myc.execute("SHOW TABLES ")
-
-
 
