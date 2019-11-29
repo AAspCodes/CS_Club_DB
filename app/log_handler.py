@@ -1,12 +1,15 @@
 import logging
 
-class log_handler:
 
+class Log_Handler:
+
+    LOG_FORMAT = "%(levelname)s %(asctime)s %(filename)s  %(funcName)s - %(message)s"
     logging.basicConfig(filename="/Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/app/debug_logger.log",
-                    level=logging.DEBUG,
-                    filemode="w")
+                        level=logging.DEBUG,
+                        filemode="w",
+                        format=LOG_FORMAT)
     logger = logging.getLogger()
 
-    @staticmethod
-    def log(message):
-        log_handler.logger.info(message)
+
+def get_logger():
+    return Log_Handler.logger

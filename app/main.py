@@ -1,3 +1,9 @@
-from app.log_handler import log_handler as lh
+from app.log_handler import get_logger
+from app.db_handler import MySqlDataBase
 
-lh.log("test123")
+logger = get_logger()
+
+logger.info(msg='hello')
+
+
+mydb = MySqlDataBase()
