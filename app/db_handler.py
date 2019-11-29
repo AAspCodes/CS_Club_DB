@@ -4,8 +4,8 @@ from app.log_handler import get_logger
 class SqlSuperHandler:
 
 
-    def manual_entry(self, entry_command):
-        """manually enter a SQL command"""
+    def sql_command(self, entry_command):
+        """execute an SQL command"""
         self.myc.execute(entry_command)
 
 class System_Sql_Data_Base_Handler(SqlSuperHandler):
@@ -24,7 +24,7 @@ class System_Sql_Data_Base_Handler(SqlSuperHandler):
 
     def create_db(self, name):
         try:
-            self.myc.execute('CREATE DATABASE {0}'.format(name))
+            self.sql_command('CREATE DATABASE {0}'.format(name))
         except msc.errors.DatabaseError as e:
             print(f"The {name} data base already exists")
             self.logger.error(e)
@@ -35,16 +35,16 @@ class System_Sql_Data_Base_Handler(SqlSuperHandler):
 
 
     def get_all_dbs(self):
-        self.myc.execute('SHOW DATABASES')
+        self.sql_command('SHOW DATABASES')
         return self.myc
 
     def show_all_dbs(self):
-        self.myc.execute('SHOW DATABASES')
+        self.sql_command('SHOW DATABASES')
         for i in self.myc:
             print(i)
 
     def del_db(self, name):
-        self.myc.execute("DROP DATABASE {0}".format(name))
+        self.sql_command("DROP DATABASE {0}".format(name))
 
 
 class MySqlDataBase(SqlSuperHandler):
@@ -78,13 +78,13 @@ class MySqlDataBase(SqlSuperHandler):
 
 
     def del_table(self, name):
-        self.myc.execute("DROP {0}".format(name))
+        self.sql_command("DROP {0}".format(name))
 
 
     def show_all_tables(self):
-        self.myc.execute("SHOW TABLES ")
+        self.sql_command("SHOW TABLES ")
         print(*self.myc)
 
     def show_table(self,name):
-        self.myc.execute("SHOW TABLES ")
+        self.sql_command("SHOW TABLES ")
 
