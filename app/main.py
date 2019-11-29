@@ -3,7 +3,7 @@ from app.db_handler import MySqlDataBase
 
 logger = get_logger()
 
-logger.info(msg='hello')
+logger.info(msg='tesgdasdfo')
 
 
 mydb = MySqlDataBase()
