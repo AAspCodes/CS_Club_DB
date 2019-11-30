@@ -9,12 +9,23 @@ from app.plotter import Plotter
 from app.html_formatter import HtmlFormatter
 
 
+def open_brower_tab():
+    import webbrowser
+    # webbrowser.open_new_tab("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
+    window = webbrowser.open_new("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
+    webbrowser.
+
+
+
+
 
 
 data = ([1,2,34,4], [1,20, 5, 21])
 
 html = Plotter(data).plot_html()
 HtmlFormatter(html).main()
+
+open_brower_tab()
 
 
 
