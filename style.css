@@ -6,37 +6,23 @@ header {
 }
 
 #container {
-  color: blue;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-  border: darkblue;
-  border-width: 2px;
-  border-style: dashed;
-
+    color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
 }
+
 #buttons {
-  border: darkblue;
-  border-width: 2px;
-  border-style: dashed;
-  text-align: center;
-
+    border: darkblue;
+    width: 100%;
+    height: 100%;
 }
 
-#button1 {
-  float: left;
-  padding: 20px;
-}
-
-#button2 {
-
-
-
-
-
-}
-#button3 {
-  float: right;
-
-
+.button {
+    text-align: center;
+    float: left;
+    width: 33.3333%;
+    height: 100%;
+    background-color: aqua;
+    font-size: 60px;
 }
