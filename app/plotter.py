@@ -1,6 +1,8 @@
-import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
+
+import matplotlib.pyplot as plt
+
 
 class Plotter:
 
@@ -22,4 +24,3 @@ class Plotter:
     @staticmethod
     def format_html(encoded):
         return '<img src=\'data:image/png;base64,{}\'>'.format(encoded)
-

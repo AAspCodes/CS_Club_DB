@@ -1,5 +1,4 @@
 class HtmlFormatter:
-
     head = """<!DOCTYPE html>
     <html lang="en">
 

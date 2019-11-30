@@ -1,15 +1,15 @@
 import mysql.connector as msc
-from app.log_handler import get_logger
+from app.loghandler import get_logger
+
 
 class SqlSuperHandler:
-
 
     def sql_command(self, entry_command):
         """execute an SQL command"""
         self.myc.execute(entry_command)
 
-class System_Sql_Data_Base_Handler(SqlSuperHandler):
 
+class System_Sql_Data_Base_Handler(SqlSuperHandler):
 
     def __init__(self):
         self.logger = get_logger()
@@ -21,7 +21,6 @@ class System_Sql_Data_Base_Handler(SqlSuperHandler):
         self.logger.info(msg="Connect to Database")
         return mydb
 
-
     def create_db(self, name):
         try:
             self.sql_command('CREATE DATABASE {0}'.format(name))
@@ -32,7 +31,6 @@ class System_Sql_Data_Base_Handler(SqlSuperHandler):
             msg = "data base {0} was created".format(name)
             print(msg)
             self.logger.info(msg=msg)
-
 
     def get_all_dbs(self):
         self.sql_command('SHOW DATABASES')
@@ -64,7 +62,6 @@ class MySqlDataBase(SqlSuperHandler):
         self.logger.info(msg="Connect to Database: {0}".format(name))
         return mydb
 
-
     def create_table(self, name, primary_key, pk_data_type):
         # try:
         self.myc.execute(f'CREATE Table {name} ({primary_key} {pk_data_type});')
@@ -76,15 +73,12 @@ class MySqlDataBase(SqlSuperHandler):
         #     print(msg)
         #     self.logger.info(msg=msg)
 
-
     def del_table(self, name):
         self.sql_command("DROP {0}".format(name))
-
 
     def show_all_tables(self):
         self.sql_command("SHOW TABLES ")
         print(*self.myc)
 
-    def show_table(self,name):
+    def show_table(self, name):
         self.sql_command("SHOW TABLES ")
-

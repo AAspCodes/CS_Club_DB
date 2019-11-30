@@ -1,7 +1,7 @@
 import logging
 
-class Log_Handler:
 
+class LogHandler:
     LOG_FORMAT = "%(levelname)s %(asctime)s %(filename)s  %(funcName)s - %(message)s"
     logging.basicConfig(filename="./debug_logger.log",
                         level=logging.DEBUG,
@@ -11,4 +11,4 @@ class Log_Handler:
 
 
 def get_logger():
-    return Log_Handler.logger
+    return LogHandler.logger

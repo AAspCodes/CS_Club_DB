@@ -1,5 +1,4 @@
-from app.log_handler import get_logger
-from app.db_handler import MySqlDataBase, System_Sql_Data_Base_Handler
+from app.loghandler import get_logger
 
 logger = get_logger()
 
@@ -11,25 +10,15 @@ from app.html_formatter import HtmlFormatter
 
 def open_brower_tab():
     import webbrowser
-    # webbrowser.open_new_tab("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
-    window = webbrowser.open_new("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
-    webbrowser.
+    webbrowser.open_new("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
 
 
-
-
-
-
-data = ([1,2,34,4], [1,20, 5, 21])
+data = ([1, 2, 34, 4], [1, 20, 5, 21])
 
 html = Plotter(data).plot_html()
 HtmlFormatter(html).main()
 
 open_brower_tab()
-
-
-
-
 
 #
 # sys_db_handler = System_Sql_Data_Base_Handler()
@@ -43,4 +32,3 @@ open_brower_tab()
 #
 # mdb = MySqlDataBase("giraffe")
 # print(mdb.show_all_tables())
-
