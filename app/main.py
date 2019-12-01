@@ -13,10 +13,15 @@ def open_brower_tab():
     webbrowser.open_new("file:///Users/pro/Documents/ProgrammingFiles/Python/PycharmProjects/CS_Club_DB/index.html")
 
 
-data = ([1, 2, 34, 4], [1, 20, 5, 21])
+data1 = ([1, 2, 34, 4], [1, 20, 5, 21])
+data2 = ([1, 2, 5, 4], [1, 7, 5, 2])
 
-html = Plotter(data).plot_html()
-HtmlFormatter(html).main()
+
+html = Plotter(data1).plot_html()
+HtmlFormatter(html, "index.html").main()
+
+html = Plotter(data2).plot_html()
+HtmlFormatter(html, "index1.html").main()
 
 open_brower_tab()
 
